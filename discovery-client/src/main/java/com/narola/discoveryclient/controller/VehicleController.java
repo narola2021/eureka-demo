@@ -22,7 +22,6 @@ public class VehicleController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<Vehicle> entity = new HttpEntity<>(vehicle, headers);
-        RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForObject("http://eureka-client-2/vehicles/add", entity, Vehicle.class);
     }
 
